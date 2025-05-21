@@ -4,15 +4,64 @@
   <meta charset="UTF-8">
   <title>Porte secrète</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-    input, button { padding: 10px; font-size: 16px; }
-    #link { margin-top: 20px; display: none; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #1e3a8a; /* Bleu foncé */
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      border: 1px solid #444;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #333;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+
+    #link {
+      margin-top: 20px;
+      display: none;
+    }
+
+    #secretLink {
+      background-color: #1e1e1e;
+      border: 1px solid #444;
+      color: #e0e0e0;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: #ff6666;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Entrez le mot de passe</h1>
+  <h1>Bonsoir Sarah. Te voici devant la première porte. Quelle est la clé?</h1>
   <input type="password" id="password" placeholder="Mot de passe">
+  <br>
   <button onclick="checkPassword()">Valider</button>
   
   <!-- Image de la porte -->
@@ -21,9 +70,11 @@
   </div>
 
   <div id="message"></div>
+
   <div id="link">
     <p>Accès accordé ! Voici le lien :</p>
     <input type="text" value="https://tonliensecret.com" id="secretLink" readonly style="width: 80%;">
+    <br>
     <button onclick="copyLink()">Copier</button>
   </div>
 
@@ -55,7 +106,3 @@
 </body>
 </html>
 
-  </script>
-
-</body>
-</html>
