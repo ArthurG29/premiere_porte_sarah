@@ -4,21 +4,64 @@
   <meta charset="UTF-8">
   <title>Porte secrète</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-    input, button { padding: 10px; font-size: 16px; }
-    #link { margin-top: 20px; display: none; }
-    #message { margin-top: 20px; color: red; font-style: italic; }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="password"] {
+      background-color: #1e1e1e;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    button {
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #message {
+      margin-top: 20px;
+      color: red;
+      font-style: italic;
+    }
+
+    #customText {
+      color: #003366;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 300px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Entrez le mot de passe</h1>
+  <h1 id="customText">Bonsoir Sarah. Te voici devant la première porte. Quelle est la clé ?</h1>
+
   <input type="password" id="password" placeholder="Mot de passe">
   <button onclick="checkPassword()">Valider</button>
-  
-  <!-- Image de la porte -->
+
   <div>
-    <img src="porte.png" alt="Porte" style="margin-top:20px; max-width:300px;">
+    <img src="porte.png" alt="Porte">
   </div>
 
   <div id="message"></div>
@@ -30,8 +73,7 @@
       const message = document.getElementById("message");
 
       if (password === correct) {
-        // Redirection vers une autre page
-        window.location.href = "nouvellepage.html"; // Crée ce fichier dans le même dossier
+        window.location.href = "nouvellepage.html";
       } else {
         message.textContent = "La porte n'a pas bougé d'un iota. Ce n'est sans-doute pas la bonne clé...";
       }
