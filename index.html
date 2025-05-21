@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Porte secrète</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+    input, button { padding: 10px; font-size: 16px; }
+    #link { margin-top: 20px; display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>Entrez le mot de passe</h1>
+  <input type="password" id="password" placeholder="Mot de passe">
+  <button onclick="checkPassword()">Valider</button>
+
+  <div id="message"></div>
+  <div id="link">
+    <p>Accès accordé ! Voici le lien :</p>
+    <input type="text" value="https://tonliensecret.com" id="secretLink" readonly style="width: 80%;">
+    <button onclick="copyLink()">Copier</button>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      const correct = "laporte";
+      const message = document.getElementById("message");
+      const link = document.getElementById("link");
+
+      if (password === correct) {
+        message.textContent = "";
+        link.style.display = "block";
+      } else {
+        link.style.display = "none";
+        message.textContent = "Mot de passe incorrect.";
+      }
+    }
+
+    function copyLink() {
+      const linkField = document.getElementById("secretLink");
+      linkField.select();
+      linkField.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Lien copié !");
+    }
+  </script>
+
+</body>
+</html>
