@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Deuxième porte</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    #intro {
+      color: #003366;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .question {
+      color: #003366;
+      font-size: 16px;
+      margin: 15px 0;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #1e1e1e;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #message {
+      margin-top: 20px;
+      color: red;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="intro">
+    Félicitations Sarah, tu as passé la première porte.<br>
+    Mais avant de connaître ton cadeau, il te reste une porte à franchir.<br>
+    Étant donné tes problèmes de mémoire, je me suis dit qu'il serait judicieux<br>
+    de te faire te remémorer certains événements.<br>
+    Alors... souviens-toi Sarah.
+  </div>
+
+  <div class="question">1. Où nous sommes-nous rencontrés la toute première fois ?</div>
+  <div class="question">2. Quelle était la première chanson que tu as chantée devant moi ?</div>
+  <div class="question">3. Quel objet symbolise pour toi notre premier vrai fou rire ensemble ?</div>
+  <div class="question">4. Quelle est la première ville dans laquelle on a voyagé tous les deux ?</div>
+  <div class="question">5. Quelle expression est devenue notre private joke numéro un ?</div>
+
+  <input type="password" id="password" placeholder="Mot de passe final">
+  <button onclick="checkPassword()">Valider</button>
+
+  <div id="message"></div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      const correct = "motdepassefinal"; // Remplace par le bon mot de passe
+      const message = document.getElementById("message");
+
+      if (password === correct) {
+        window.location.href = "cadeau.html"; // Page finale à créer si tu veux
+      } else {
+        message.textContent = "Ce n’est pas encore la bonne combinaison… essaie de te souvenir.";
+      }
+    }
+  </script>
+
+</body>
+</html>
 
