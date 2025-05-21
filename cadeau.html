@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Cadeau</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #89CFF0;
+      margin-bottom: 40px;
+    }
+
+    .message {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 40px;
+    }
+
+    img {
+      width: 300px;
+      margin-top: 30px;
+      border-radius: 15px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #89CFF0;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sarah...</h1>
+
+  <div class="message" id="line1">Tu as franchi toutes les portes.</div>
+  <div class="message" id="line2" style="display:none;">Tu t'es souvenue. Tu t'es battue. Tu as mérité ta récompense.</div>
+  <div class="message" id="line3" style="display:none;">Et il est temps maintenant de découvrir ce que je t’ai préparé…</div>
+
+  <div id="surprise">
+    <h2>🌟 Une journée à Disneyland... avec moi ! 🌟</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Sleeping_Beauty_Castle_at_Disneyland_%28cropped%29.jpg/800px-Sleeping_Beauty_Castle_at_Disneyland_%28cropped%29.jpg" alt="Disneyland Paris">
+    <p class="message">Billets déjà pris. Transport inclus. Il ne manque plus que toi. 🎢</p>
+    <button onclick="alert('Tu peux déjà commencer à rêver de churros et de Space Mountain.')">Je suis partante !</button>
+  </div>
+
+  <script>
+    setTimeout(() => { document.getElementById('line2').style.display = 'block'; }, 2000);
+    setTimeout(() => { document.getElementById('line3').style.display = 'block'; }, 4000);
+    setTimeout(() => { document.getElementById('surprise').style.display = 'block'; }, 7000);
+  </script>
+
+</body>
+</html>
 
