@@ -95,17 +95,20 @@
 
   <script>
     function checkPassword() {
-      const password = document.getElementById("password").value;
-      const correct = "motdepassefinal"; // À remplacer par la vraie clé finale
+      const password = document.getElementById("password").value.toLowerCase();
+      const correct = "dprdh";
       const message = document.getElementById("message");
 
       if (password === correct) {
-        window.location.href = "cadeau.html"; // Page suivante à créer
+        window.location.href = "cadeau.html";
       } else {
-        message.textContent = "Ce n’est pas encore la bonne combinaison… essaie de te souvenir.";
+        message.textContent = "La porte n'a pas bougé d'un iota. Ce n'est sans doute pas la bonne clé...";
       }
     }
   </script>
+
+</body>
+</html>
 
 </body>
 </html>
