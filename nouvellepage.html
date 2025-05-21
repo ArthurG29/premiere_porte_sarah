@@ -23,9 +23,16 @@
       font-size: 16px;
       margin: 15px 0;
       text-align: left;
-      max-width: 600px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .instruction {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #003366;
+      font-style: italic;
     }
 
     input[type="password"] {
@@ -35,7 +42,7 @@
       color: #fff;
       border: 1px solid #555;
       border-radius: 5px;
-      margin-top: 30px;
+      margin-top: 10px;
     }
 
     button {
@@ -70,13 +77,18 @@
     Alors... souviens-toi Sarah.
   </div>
 
-  <div class="question">1. Où nous sommes-nous rencontrés la toute première fois ?</div>
-  <div class="question">2. Quelle était la première chanson que tu as chantée devant moi ?</div>
-  <div class="question">3. Quel objet symbolise pour toi notre premier vrai fou rire ensemble ?</div>
-  <div class="question">4. Quelle est la première ville dans laquelle on a voyagé tous les deux ?</div>
-  <div class="question">5. Quelle expression est devenue notre private joke numéro un ?</div>
+  <div class="question">1. Quelle est la date exacte de notre première interaction par messages (sur Messenger) ?</div>
+  <div class="question">2. Quelle est le nom de la ville du Airbnb dans lequel j'ai découvert que tu étais grave stylée, que tu lisais des dystopies ?</div>
+  <div class="question">3. Quel est le nom de la personne que tu as remplacée dans le groupe de musique ?</div>
+  <div class="question">4. Quelle est l'adresse de la maison dans laquelle on s'est avoué qu'on s'aimait plus qu'en amitié ?</div>
+  <div class="question">5. Quel est le nom complet de l'auberge de jeunesse dans laquelle on s'est embrassé pour la première fois ?</div>
 
-  <input type="password" id="password" placeholder="Mot de passe final">
+  <div class="instruction">
+    Une fois les réponses trouvées, pour obtenir la clé, il te suffit de prendre la 1<sup>ère</sup> lettre de chacune d'entre elles (les chiffres peuvent bien s'écrire avec des lettres).<br>
+    <strong>Quelle est la deuxième clé ?</strong>
+  </div>
+
+  <input type="password" id="password" placeholder="Deuxième clé">
   <button onclick="checkPassword()">Valider</button>
 
   <div id="message"></div>
@@ -84,11 +96,11 @@
   <script>
     function checkPassword() {
       const password = document.getElementById("password").value;
-      const correct = "motdepassefinal"; // Remplace par le bon mot de passe
+      const correct = "motdepassefinal"; // À remplacer par la vraie clé finale
       const message = document.getElementById("message");
 
       if (password === correct) {
-        window.location.href = "cadeau.html"; // Page finale à créer si tu veux
+        window.location.href = "cadeau.html"; // Page suivante à créer
       } else {
         message.textContent = "Ce n’est pas encore la bonne combinaison… essaie de te souvenir.";
       }
