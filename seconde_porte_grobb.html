@@ -65,6 +65,12 @@
       color: red;
       font-style: italic;
     }
+
+    .subtle-hint {
+      color: #888;
+      font-size: 14px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -102,14 +108,11 @@
       if (password === correct) {
         window.location.href = "wouhou.html";
       } else {
-        message.textContent = "La porte n'a pas bougé d'un iota. Ce n'est sans doute pas la bonne clé...";
+        message.innerHTML = `La porte n'a pas bougé d'un iota. Ce n'est sans doute pas la bonne clé...<br>
+        <span class="subtle-hint">(Si tu as besoin d'un petit coup de pouce, peut-être qu’un indice t’attend sagement autour de ta baignoire...)</span>`;
       }
     }
   </script>
 
 </body>
 </html>
-
-</body>
-</html>
-
