@@ -10,7 +10,7 @@
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 60px 20px;
-      animation: fadeIn 3s ease-in-out;
+      animation: fadeIn 5s ease-in-out;
     }
 
     h1 {
@@ -47,13 +47,6 @@
       margin-top: 20px;
     }
 
-    #confirmation {
-      margin-top: 30px;
-      font-size: 1.1em;
-      color: #FFD700;
-      display: none;
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -77,18 +70,18 @@
     <h2>🌟 Une journée à Disneyland... avec moi ! 🌟</h2>
     <img src="disney.png" alt="Disneyland Paris">
     <p class="message">Si tu es partante, envoie-moi une date et je m'occupe du reste. 🎢</p>
-    <button onclick="showConfirmation()">Je suis partante !</button>
-    <div id="confirmation">Alors j'attends ton message Sarah. J'espère que ça te fait plaisir. Prête pour les churros et Space Mountain ?</div>
+    <button onclick="alert('Alors j\'attends ton message Sarah. J\'espère que ça te fait plaisir. Prête pour les churros et Space Mountain ?')">Je suis partante !</button>
   </div>
 
   <script>
     setTimeout(() => { document.getElementById('line2').style.display = 'block'; }, 2000);
     setTimeout(() => { document.getElementById('line3').style.display = 'block'; }, 4000);
     setTimeout(() => { document.getElementById('surprise').style.display = 'block'; }, 7000);
+  </script>
 
-    function showConfirmation() {
-      document.getElementById('confirmation').style.display = 'block';
-    }
+</body>
+</html>
+
   </script>
 
 </body>
