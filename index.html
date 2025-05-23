@@ -69,21 +69,17 @@
   <script>
     function checkPassword() {
       const password = document.getElementById("password").value;
-      const correct = "espihngoty";
+      const correct = "espirhngovty";
       const message = document.getElementById("message");
 
       if (password === correct) {
         window.location.href = "nouvellepage.html";
       } else {
-        message.textContent = "La porte n'a pas bougé d'un iota. Ce n'est sans-doute pas la bonne clé...";
+        message.innerHTML = `La porte n'a pas bougé d'un iota. Ce n'est sans doute pas la bonne clé...<br>
+        <span style="color:#888; font-size: 14px;">(Mais si vraiment tu bloques, un petit indice s’est peut-être glissé dans un tiroir... celui des casseroles, par exemple.)</span>`;
       }
     }
   </script>
 
 </body>
 </html>
-
-
-</body>
-</html>
-
